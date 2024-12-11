@@ -1,0 +1,29 @@
+{
+  "lang_def": "Italiano (Italian)",
+
+  "app_name": "FileWatson %s",
+
+  "browse": "Sfoglia",
+  "search": "Cerca",
+  "directory": "Cartella",
+  "file_folder_name": "Nome File/Cartella",
+  "size": "Dimensione",
+  "last_mod": "Ultima modifica",
+
+  "error": "Errore",
+  "alg_warn": "Attenzione",
+  "info": "Info",
+
+  "exit": "Esci",
+  "close": "Chiudi",
+
+  "clipboard_open_fail": "Impossibile aprire gli appunti per scrittura.",
+  "search_already_in_prog": "Una ricerca è ancora in esecuzione.",
+  "path_search_missing": "Specificare un percorso dove eseguire la ricerca.",
+  "invalid_core_count": "Specificare un numero valido di processori.",
+  "core_less_or_equal": "Specificare un numero di processori da usare minori o uguali a %d.",
+  "file_picker_window_name": "Seleziona una cartella dove eseguire la ricerca",
+  "show_file_fm_error": "Impossibile aprire una finestra del file manager default.\n\nPercorso del file: %s",
+  "search_done": "Ricerca completata.",
+  "more_than_x_in_list": "Più di %d risultati presenti nella tabella (%zu), l'ordinamento potrebbe richiedere del tempo. Procedere?"
+}

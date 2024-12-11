@@ -1,0 +1,29 @@
+{
+	"lang_def": "Deutsch (German)",
+
+	"app_name": "FileWatson %s",
+
+	"browse": "Durchsuchen",
+	"search": "Suchen",
+	"directory": "Verzeichnis",
+	"file_folder_name": "Datei/Ordnername",
+	"size": "Größe",
+	"last_mod": "Letzte Änderung",
+	"properties": "Suchoptionen",
+
+	"error": "Fehler",
+	"alg_warn": "Warnung",
+	"info": "Info",
+
+	"exit": "Beenden",
+
+	"clipboard_open_fail": "Die Zwischenablage konnte nicht zum Schreiben geöffnet werden.",
+	"search_already_in_prog": "Eine Suche läuft bereits.",
+	"path_search_missing": "Bitte geben Sie einen Pfad zum Durchsuchen an.",
+	"invalid_core_count": "Bitte geben Sie eine gültige Anzahl von Prozessoren an.",
+	"core_less_or_equal": "Bitte geben Sie eine Prozessoranzahl kleiner oder gleich %d an.",
+	"file_picker_window_name": "Wählen Sie einen Ordner zum Durchsuchen aus",
+	"show_file_fm_error": "Fehler beim Öffnen des Standard-Dateimanagers.\n\nDateipfad: %s",
+	"search_done": "Suche abgeschlossen.",
+	"more_than_x_in_list": "Mehr als %d Ergebnisse in der Tabelle (%zu), das Sortieren könnte einige Zeit in Anspruch nehmen. Möchten Sie fortfahren?"
+}
