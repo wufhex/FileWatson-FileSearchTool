@@ -1,0 +1,29 @@
+﻿{
+  "lang_def": "日本語 (Japanese)",
+
+  "app_name": "FileWatson %s",
+
+  "browse": "ブラウズ",
+  "search": "検索",
+  "directory": "ディレクトリ",
+  "file_folder_name": "ファイル/フォルダ名",
+  "size": "サイズ",
+  "last_mod": "最終更新",
+  "properties": "検索プロパティ",
+
+  "error": "エラー",
+  "alg_warn": "警告",
+  "info": "情報",
+
+  "exit": "終了",
+
+  "clipboard_open_fail": "書き込みのためにクリップボードを開けませんでした。",
+  "search_already_in_prog": "検索が既に進行中です。",
+  "path_search_missing": "検索するパスを指定してください。",
+  "invalid_core_count": "有効なプロセッサ数を指定してください。",
+  "core_less_or_equal": "指定するプロセッサ数は %d 以下にしてください。",
+  "file_picker_window_name": "検索を実行するフォルダを選択してください",
+  "show_file_fm_error": "デフォルトのファイルマネージャウィンドウを開けませんでした。\n\nファイルパス：%s",
+  "search_done": "検索完了。",
+  "more_than_x_in_list": "テーブルに %d 件以上の結果があります (%zu)、並べ替えには時間がかかる場合があります。続行しますか？"
+}

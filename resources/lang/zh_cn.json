@@ -1,0 +1,29 @@
+﻿{
+	"lang_def": "简体中文 (Chinese)",
+
+	"app_name": "FileWatson %s",
+
+	"browse": "浏览",
+	"search": "搜索",
+	"directory": "目录",
+	"file_folder_name": "文件/文件夹名称",
+	"size": "大小",
+	"last_mod": "最后修改",
+	"properties": "搜索属性",
+
+	"error": "错误",
+	"alg_warn": "警告",
+	"info": "信息",
+
+	"exit": "退出",
+
+	"clipboard_open_fail": "无法打开剪贴板进行写入。",
+	"search_already_in_prog": "搜索已在进行中。",
+	"path_search_missing": "请指定一个搜索路径。",
+	"invalid_core_count": "请指定一个有效的处理器数量。",
+	"core_less_or_equal": "请指定一个小于或等于 %d 的处理器数量。",
+	"file_picker_window_name": "选择一个文件夹来执行搜索",
+	"show_file_fm_error": "无法打开默认文件管理器窗口。\n\n文件路径：%s",
+	"search_done": "搜索完成。",
+	"more_than_x_in_list": "表格中有超过 %d 个结果 (%zu)，排序可能需要一些时间。继续吗？"
+}

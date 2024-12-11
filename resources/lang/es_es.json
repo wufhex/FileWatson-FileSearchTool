@@ -1,0 +1,29 @@
+{
+	"lang_def": "Español (Spanish)",
+
+	"app_name": "FileWatson %s",
+
+	"browse": "Explorar",
+	"search": "Buscar",
+	"directory": "Directorio",
+	"file_folder_name": "Nombre del archivo/carpeta",
+	"size": "Tamaño",
+	"last_mod": "Última modificación",
+	"properties": "Propiedades de búsqueda",
+
+	"error": "Error",
+	"alg_warn": "Advertencia",
+	"info": "Información",
+
+	"exit": "Salir",
+
+	"clipboard_open_fail": "No se pudo abrir el portapapeles para escribir.",
+	"search_already_in_prog": "Ya hay una búsqueda en curso.",
+	"path_search_missing": "Especifica una ruta para realizar la búsqueda.",
+	"invalid_core_count": "Especifica un número válido de procesadores.",
+	"core_less_or_equal": "Especifica un número de procesadores menor o igual a %d.",
+	"file_picker_window_name": "Selecciona una carpeta para realizar la búsqueda",
+	"show_file_fm_error": "No se pudo abrir la ventana del gestor de archivos predeterminado.\n\nRuta del archivo: %s",
+	"search_done": "Búsqueda completada.",
+	"more_than_x_in_list": "Más de %d resultados en la tabla (%zu), el ordenamiento puede tardar un poco. ¿Continuar?"
+}

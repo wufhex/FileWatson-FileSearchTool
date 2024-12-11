@@ -1,0 +1,29 @@
+{
+  "lang_def": "English US",
+
+  "app_name": "FileWatson %s",
+
+  "browse": "Browse",
+  "search": "Search",
+  "directory": "Directory",
+  "file_folder_name": "File/Folder Name",
+  "size": "Size",
+  "last_mod": "Last Modified",
+
+  "error": "Error",
+  "alg_warn": "Algorithm Warning",
+  "info": "Info",
+
+  "exit": "Exit",
+  "close": "Close",
+
+  "clipboard_open_fail": "Failed to open the clipboard.",
+  "search_already_in_prog": "A search is already in progress.",
+  "path_search_missing": "Please specify a path to search in.",
+  "invalid_core_count": "Please specify a valid number of cores to use.",
+  "core_less_or_equal": "Please specify a number of cores less or equal than %d.",
+  "file_picker_window_name": "Select a path to recursively search in",
+  "show_file_fm_error": "Failed to show file in the default file manager.\n\nPath: %s",
+  "search_done": "Search completed.",
+  "more_than_x_in_list": "More than %d entries present in the table (%zu), sorting might take a while. Continue?"
+}

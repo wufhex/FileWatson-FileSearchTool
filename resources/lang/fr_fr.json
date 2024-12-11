@@ -1,0 +1,29 @@
+{
+  "lang_def": "Français (French)",
+
+  "app_name": "FileWatson %s",
+
+  "browse": "Parcourir",
+  "search": "Rechercher",
+  "directory": "Dossier",
+  "file_folder_name": "Nom du fichier/dossier",
+  "size": "Taille",
+  "last_mod": "Dernière modification",
+  "properties": "Propriétés de recherche",
+
+  "error": "Erreur",
+  "alg_warn": "Avertissement",
+  "info": "Info",
+
+  "exit": "Quitter",
+
+  "clipboard_open_fail": "Impossible d'ouvrir le presse-papiers en écriture.",
+  "search_already_in_prog": "Une recherche est déjà en cours.",
+  "path_search_missing": "Veuillez spécifier un chemin pour effectuer la recherche.",
+  "invalid_core_count": "Veuillez spécifier un nombre valide de processeurs.",
+  "core_less_or_equal": "Veuillez spécifier un nombre de processeurs inférieur ou égal à %d.",
+  "file_picker_window_name": "Sélectionnez un dossier pour effectuer la recherche",
+  "show_file_fm_error": "Impossible d'ouvrir la fenêtre du gestionnaire de fichiers par défaut.\n\nChemin du fichier : %s",
+  "search_done": "Recherche terminée.",
+  "more_than_x_in_list": "Plus de %d résultats dans le tableau (%zu), le tri peut prendre un certain temps. Voulez-vous continuer ?"
+}
