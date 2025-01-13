@@ -50,31 +50,6 @@ wxString PatternUtil::EscapeRegex(const wxString& str) {
     return escaped;
 }
 
-PatternUtil::SearchData PatternUtil::PathToSearchData(const wxString& path) {
-    SearchData data;
-
-    if (path.IsEmpty()) {
-        data.valid = false;
-        return data;
-    }
-
-    try {
-        wxString filename = DirectoryUtil::GetLastSegment(path);
-
-        data.valid = true;
-        data.term = filename.IsEmpty() ? wxString("*.*") : filename;
-        data.path = DirectoryUtil::RemovePathSpec(path);
-    } catch (const std::exception& e) {
-        data.valid = false;
-    }
-
-    if (data.path.IsEmpty()) {
-        data.valid = false;
-    }
-
-    return data;
-}
-
 size_t PatternUtil::LevenshteinDistance(const wxString& s1, const wxString& s2) {
     const size_t len1 = s1.length(), len2 = s2.length();
     std::vector<std::vector<size_t>> d(len1 + 1, std::vector<size_t>(len2 + 1));

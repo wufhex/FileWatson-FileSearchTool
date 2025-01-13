@@ -25,5 +25,8 @@
   "file_picker_window_name": "Sélectionnez un dossier pour effectuer la recherche",
   "show_file_fm_error": "Impossible d'ouvrir la fenêtre du gestionnaire de fichiers par défaut.\n\nChemin du fichier : %s",
   "search_done": "Recherche terminée.",
-  "more_than_x_in_list": "Plus de %d résultats dans le tableau (%zu), le tri peut prendre un certain temps. Voulez-vous continuer ?"
+  "more_than_x_in_list": "Plus de %d résultats dans le tableau (%zu), le tri peut prendre un certain temps. Voulez-vous continuer ?",
+  
+  "path_textbox_hint": "Rechercher un dossier",
+  "search_textbox_hint": "Terme de recherche"
 }

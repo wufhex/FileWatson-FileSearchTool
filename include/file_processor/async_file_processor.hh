@@ -16,7 +16,7 @@ class AsyncFileProcessor {
 public:
     AsyncFileProcessor();
 
-    void StartSearch(const wxString& path, int num_threads);
+    void StartSearch(const wxString& path, const wxString& search, int num_threads);
 
     std::vector<FileSearchResult> GetResults();
 
@@ -29,5 +29,5 @@ private:
     std::mutex                    _results_mutex;
     std::queue<FileSearchResult>  _results_queue;
 
-    void SearchWorker(const wxString& path, int num_threads);
+    void SearchWorker(const wxString& path, const wxString& search, int num_threads);
 };

@@ -23,13 +23,11 @@ namespace fs = std::filesystem;
 class PatternUtil {
 public:
 	typedef struct SearchData {
-		bool	 valid;
 		wxString path;
 		wxString term;
 	} SearchData;
 
 	static bool        MatchesPattern(const wxString& file_name, const wxString& pattern);
-	static SearchData  PathToSearchData(const wxString& path);
 private:
 	static wxString    EscapeRegex(const wxString& str);
 	static size_t	   LevenshteinDistance(const wxString& s1, const wxString& s2);

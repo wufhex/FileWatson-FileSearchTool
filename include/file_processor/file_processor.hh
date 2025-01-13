@@ -18,7 +18,7 @@ public:
     FileProcessor();
 
     void SearchFilesMultithreaded(const wxString& path,
-        const SearchCallback& callback, int num_threads);
+        const wxString& search, const SearchCallback& callback, int num_threads);
 
 private:
     std::mutex                   _queue_mutex;

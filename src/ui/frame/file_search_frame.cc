@@ -25,6 +25,7 @@ FileSearchFrame::~FileSearchFrame() {
 
 void FileSearchFrame::InitializeUI(wxPanel* panel) {
     _path_text_ctrl    = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxSize(400, -1));
+    _search_query_ctrl = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxSize(120, -1));
     _core_count_ctrl   = new wxTextCtrl(panel, wxID_ANY, std::to_string(_core_count), wxDefaultPosition, wxSize(60, -1));
     _browse_btn        = new wxButton(panel, wxID_ANY, LANG.GetString("browse"));
     _search_btn        = new wxButton(panel, wxID_ANY, LANG.GetString("search"));
@@ -59,6 +60,7 @@ void FileSearchFrame::ConfigureLayout(wxPanel* panel) {
     vbox->Add(hbox_bottom, 0, wxALIGN_LEFT | wxALL, 5);
 
     hbox_top->Add(_path_text_ctrl, 1, wxEXPAND | wxALL, 5);
+    hbox_top->Add(_search_query_ctrl, 1, wxEXPAND | wxALL, 5);
     hbox_top->Add(_core_count_ctrl, 0, wxEXPAND | wxALL, 5);
     hbox_top->Add(_browse_btn, 0, wxEXPAND | wxALL, 5);
     hbox_top->Add(_search_btn, 0, wxEXPAND | wxALL, 5);
@@ -70,6 +72,8 @@ void FileSearchFrame::ConfigureLayout(wxPanel* panel) {
     wxFont rows_font(_curr_row_font_size, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
     _results_list_ctrl->SetFont(rows_font);
     _results_list_ctrl->Refresh();
+
+    this->RefreshStaticUIElements();
 
     panel->SetSizer(vbox);
 }
@@ -130,6 +134,12 @@ void FileSearchFrame::StartAsyncSearch() {
         return;
     }
 
+    wxString search = _search_query_ctrl->GetValue();
+    if (path.empty()) {
+        wxMessageBox(LANG.GetString("path_search_missing"), LANG.GetString("error"), wxICON_ERROR);
+        return;
+    }
+
     unsigned int core_count = std::stoi(_core_count_ctrl->GetValue().ToStdString());
     if (core_count <= 0) {
         wxMessageBox(LANG.GetString("invalid_core_count"), LANG.GetString("error"), wxICON_ERROR);
@@ -143,7 +153,7 @@ void FileSearchFrame::StartAsyncSearch() {
 
     _results_list_ctrl->DeleteAllItems();
 
-    _async_file_proc->StartSearch(path, core_count);
+    _async_file_proc->StartSearch(path, search, core_count);
     
     _is_searching = true;
     _timer->Start(_uicfg.update_time);
@@ -163,6 +173,9 @@ void FileSearchFrame::RefreshStaticUIElements() {
     _results_list_ctrl->SetColumn(1, i_ff_name);
     _results_list_ctrl->SetColumn(2, i_size);
     _results_list_ctrl->SetColumn(3, i_lastmod);
+
+    _path_text_ctrl->SetHint(LANG.GetString("path_textbox_hint"));
+    _search_query_ctrl->SetHint(LANG.GetString("search_textbox_hint"));
 }
 
 void FileSearchFrame::OnBrowse(wxCommandEvent& event) {
@@ -180,8 +193,10 @@ void FileSearchFrame::OnKeyDown(wxKeyEvent& event) {
     } else if (event.ControlDown() && event.GetKeyCode() == WXK_BACK) {
         long item_index = _results_list_ctrl->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
         DeleteSelectedItem(item_index);
-    } else if (event.GetKeyCode() == WXK_RETURN && _path_text_ctrl->HasFocus()) {
-        StartAsyncSearch();
+    } else if (event.GetKeyCode() == WXK_RETURN) {
+        if (_path_text_ctrl->HasFocus() || _search_query_ctrl->HasFocus()) {
+            StartAsyncSearch();
+        }
     } else {
         event.Skip();
     }

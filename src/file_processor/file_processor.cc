@@ -5,11 +5,8 @@ FileProcessor::FileProcessor()
 }
 
 void FileProcessor::SearchFilesMultithreaded(const wxString& path,
-    const SearchCallback& callback, int num_threads) {
-    PatternUtil::SearchData search_data = PatternUtil::PathToSearchData(path);
-    if (!search_data.valid) {
-        return;
-    }
+    const wxString& search, const SearchCallback& callback, int num_threads) {
+    PatternUtil::SearchData search_data = { path, search };
 
     {
         std::lock_guard<std::mutex> lock(_queue_mutex);

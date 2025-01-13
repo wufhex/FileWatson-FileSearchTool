@@ -25,5 +25,8 @@
   "file_picker_window_name": "Seleziona una cartella dove eseguire la ricerca",
   "show_file_fm_error": "Impossibile aprire una finestra del file manager default.\n\nPercorso del file: %s",
   "search_done": "Ricerca completata.",
-  "more_than_x_in_list": "Più di %d risultati presenti nella tabella (%zu), l'ordinamento potrebbe richiedere del tempo. Procedere?"
+  "more_than_x_in_list": "Più di %d risultati presenti nella tabella (%zu), l'ordinamento potrebbe richiedere del tempo. Procedere?",
+
+  "path_textbox_hint": "Cartella dove cercare",
+  "search_textbox_hint": "Termine di ricerca"
 }

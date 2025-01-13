@@ -25,5 +25,8 @@
 	"file_picker_window_name": "Selecciona una carpeta para realizar la búsqueda",
 	"show_file_fm_error": "No se pudo abrir la ventana del gestor de archivos predeterminado.\n\nRuta del archivo: %s",
 	"search_done": "Búsqueda completada.",
-	"more_than_x_in_list": "Más de %d resultados en la tabla (%zu), el ordenamiento puede tardar un poco. ¿Continuar?"
+	"more_than_x_in_list": "Más de %d resultados en la tabla (%zu), el ordenamiento puede tardar un poco. ¿Continuar?",
+
+	"path_textbox_hint": "Buscar carpeta",
+	"search_textbox_hint": "Término de búsqueda"
 }

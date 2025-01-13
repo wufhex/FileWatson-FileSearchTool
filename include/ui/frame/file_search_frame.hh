@@ -37,6 +37,7 @@ private:
     AlgorithmConfig _algcfg;
 
     wxTextCtrl* _path_text_ctrl;
+    wxTextCtrl* _search_query_ctrl;
     wxTextCtrl* _core_count_ctrl;
     wxButton*   _search_btn;
     wxButton*   _browse_btn;

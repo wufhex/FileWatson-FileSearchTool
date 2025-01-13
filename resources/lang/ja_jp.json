@@ -25,5 +25,8 @@
   "file_picker_window_name": "検索を実行するフォルダを選択してください",
   "show_file_fm_error": "デフォルトのファイルマネージャウィンドウを開けませんでした。\n\nファイルパス：%s",
   "search_done": "検索完了。",
-  "more_than_x_in_list": "テーブルに %d 件以上の結果があります (%zu)、並べ替えには時間がかかる場合があります。続行しますか？"
+  "more_than_x_in_list": "テーブルに %d 件以上の結果があります (%zu)、並べ替えには時間がかかる場合があります。続行しますか？",
+
+  "path_textbox_hint": "フォルダーを検索",
+  "search_textbox_hint": "検索語"
 }

@@ -4,12 +4,12 @@ AsyncFileProcessor::AsyncFileProcessor()
     : _done(false) {
 }
 
-void AsyncFileProcessor::StartSearch(const wxString& path, int num_threads) {
+void AsyncFileProcessor::StartSearch(const wxString& path, const wxString& search, int num_threads) {
     wxString fixed_path = DirectoryUtil::NormalizePath(path);
 
     _done = false;
     _search_future = std::async(std::launch::async, &AsyncFileProcessor::SearchWorker,
-        this, fixed_path, num_threads);
+        this, fixed_path, search, num_threads);
 }
 
 std::vector<FileSearchResult> AsyncFileProcessor::GetResults() {
@@ -28,7 +28,7 @@ bool AsyncFileProcessor::IsDone() const {
     return _done;
 }
 
-void AsyncFileProcessor::SearchWorker(const wxString& path, int num_threads) {
+void AsyncFileProcessor::SearchWorker(const wxString& path, const wxString& search, int num_threads) {
     auto callback = [this](
         const wxString& directory,
         const wxString& file_name,
@@ -43,6 +43,6 @@ void AsyncFileProcessor::SearchWorker(const wxString& path, int num_threads) {
             _results_queue.push(result);
         };
 
-    _file_processor.SearchFilesMultithreaded(path, callback, num_threads);
+    _file_processor.SearchFilesMultithreaded(path, search, callback, num_threads);
     _done = true;
 }
