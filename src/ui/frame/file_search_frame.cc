@@ -194,9 +194,7 @@ void FileSearchFrame::OnKeyDown(wxKeyEvent& event) {
         long item_index = _results_list_ctrl->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
         DeleteSelectedItem(item_index);
     } else if (event.GetKeyCode() == WXK_RETURN) {
-        if (_path_text_ctrl->HasFocus() || _search_query_ctrl->HasFocus()) {
-            StartAsyncSearch();
-        }
+        StartAsyncSearch();
     } else {
         event.Skip();
     }
