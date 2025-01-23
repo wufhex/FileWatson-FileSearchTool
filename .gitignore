@@ -4,3 +4,4 @@ linuxbuild/
 macbuild/
 post/
 **/.DS_Store
+/resources/lang/.vscode
