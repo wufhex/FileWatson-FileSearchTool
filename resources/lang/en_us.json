@@ -24,9 +24,11 @@
   "core_less_or_equal": "Please specify a number of cores less or equal than %d.",
   "file_picker_window_name": "Select a path to recursively search in",
   "show_file_fm_error": "Failed to show file in the default file manager.\n\nPath: %s",
+  "searching": "Searching...",
   "search_done": "Search completed.",
   "more_than_x_in_list": "More than %d entries present in the table (%zu), sorting might take a while. Continue?",
 
   "path_textbox_hint": "Search folder",
-  "search_textbox_hint": "Search term"
+  "search_textbox_hint": "Search term",
+  "core_textbox_hint": "Cores"
 }

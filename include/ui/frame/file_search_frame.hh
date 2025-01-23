@@ -43,6 +43,7 @@ private:
     wxButton*   _browse_btn;
     wxListCtrl* _results_list_ctrl;
     wxComboBox* _lang_combo_box;
+    wxStaticText* _status_text;
 
     AsyncFileProcessor* _async_file_proc;
     wxTimer* _timer;
@@ -73,4 +74,6 @@ private:
     void OnColumnClick(wxListEvent& event);
     void OnMouseWheel(wxMouseEvent& event);
     void OnLanguageChange(wxCommandEvent& event);
+
+    void SetSearchStatusUI(bool searching);
 };

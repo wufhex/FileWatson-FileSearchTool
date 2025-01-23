@@ -29,6 +29,7 @@ void FileSearchFrame::InitializeUI(wxPanel* panel) {
     _core_count_ctrl   = new wxTextCtrl(panel, wxID_ANY, std::to_string(_core_count), wxDefaultPosition, wxSize(60, -1));
     _browse_btn        = new wxButton(panel, wxID_ANY, LANG.GetString("browse"));
     _search_btn        = new wxButton(panel, wxID_ANY, LANG.GetString("search"));
+    _status_text       = new wxStaticText(panel, wxID_ANY, "", wxPoint(20, 20), wxSize(200, -1));
 
     _results_list_ctrl = new wxListCtrl(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT);
     _results_list_ctrl->InsertColumn(0, LANG.GetString("directory"), wxLIST_FORMAT_LEFT, 300);
@@ -65,7 +66,8 @@ void FileSearchFrame::ConfigureLayout(wxPanel* panel) {
     hbox_top->Add(_browse_btn, 0, wxEXPAND | wxALL, 5);
     hbox_top->Add(_search_btn, 0, wxEXPAND | wxALL, 5);
 
-    hbox_bottom->Add(_lang_combo_box, 0, wxALIGN_LEFT  | wxALL, 5);
+    hbox_bottom->Add(_lang_combo_box, 0, wxALIGN_LEFT | wxALL, 5);
+    hbox_bottom->Add(_status_text, 0, wxALIGN_LEFT | wxALL, 7);
 
     _curr_row_font_size = _uicfg.def_font_size;
    
@@ -123,6 +125,8 @@ void FileSearchFrame::DeleteSelectedItem(long item_index) {
 }
 
 void FileSearchFrame::StartAsyncSearch() {
+    this->SetSearchStatusUI(true);
+
     if (_is_searching) {
         wxMessageBox(LANG.GetString("search_already_in_prog"), LANG.GetString("error"), wxICON_ERROR);
         return;
@@ -176,6 +180,9 @@ void FileSearchFrame::RefreshStaticUIElements() {
 
     _path_text_ctrl->SetHint(LANG.GetString("path_textbox_hint"));
     _search_query_ctrl->SetHint(LANG.GetString("search_textbox_hint"));
+    _core_count_ctrl->SetHint(LANG.GetString("core_textbox_hint"));
+
+    this->SetSearchStatusUI(false);
 }
 
 void FileSearchFrame::OnBrowse(wxCommandEvent& event) {
@@ -240,7 +247,8 @@ void FileSearchFrame::OnTimer(wxTimerEvent& event) {
     if (_async_file_proc->IsDone()) {
         _is_searching = false;
         _timer->Stop();
-        wxMessageBox(LANG.GetString("search_done"), LANG.GetString("info"), wxICON_INFORMATION);
+        wxBell();
+        this->SetSearchStatusUI(false);
     }
 }
 
@@ -327,4 +335,8 @@ void FileSearchFrame::OnLanguageChange(wxCommandEvent& event) {
     CFGMGR.Update(CFGMGR.def_cfg.cfg_lang_path, selected_lang_name);
 
     RefreshStaticUIElements();
+}
+
+void FileSearchFrame::SetSearchStatusUI(bool searching) {
+    _status_text->SetLabelText(LANG.GetString(searching ? "searching" : "search_done"));
 }

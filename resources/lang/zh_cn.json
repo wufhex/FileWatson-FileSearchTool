@@ -24,9 +24,11 @@
 	"core_less_or_equal": "请指定一个小于或等于 %d 的处理器数量。",
 	"file_picker_window_name": "选择一个文件夹来执行搜索",
 	"show_file_fm_error": "无法打开默认文件管理器窗口。\n\n文件路径：%s",
+	"searching": "正在搜索...",
 	"search_done": "搜索完成。",
 	"more_than_x_in_list": "表格中有超过 %d 个结果 (%zu)，排序可能需要一些时间。继续吗？",
 
 	"path_textbox_hint": "搜索文件夹",
-	"search_textbox_hint": "搜索词"
+	"search_textbox_hint": "搜索词",
+	"core_textbox_hint": "核心"
 }
