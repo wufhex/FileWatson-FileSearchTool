@@ -20,7 +20,7 @@ bool LangHandler::LoadLanguages(const wxString& path, wxString& out_exception) {
         full_path = _lhcfg.def_linux_lang_path;
     }
     
-    wxDir dir(path);
+    wxDir dir(full_path);
 #else
     wxDir dir(path);
 #endif

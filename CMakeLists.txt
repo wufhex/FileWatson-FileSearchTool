@@ -120,6 +120,7 @@ install(CODE "execute_process(COMMAND ${CMAKE_COMMAND}
 install(DIRECTORY ${LANG_DIR}/
     DESTINATION /opt/fw/lang
     FILES_MATCHING PATTERN "*.lang"
+    PATTERN "*"
 )
 elseif (WIN32)
     # Get the Program Files path 
