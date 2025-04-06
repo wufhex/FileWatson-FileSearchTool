@@ -100,3 +100,56 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${LANG_DIR}" "${LANG_OUTPUT_DIR}"  # Copy new folder
     COMMENT "Copying language files to ${LANG_OUTPUT_DIR}"
 )
+
+# ==========================
+# INSTALL CONFIGURATION
+# ==========================
+
+if (UNIX AND NOT APPLE) 
+# 1. Install the binary to /usr/local/bin/
+install(TARGETS ${PROJECT_NAME}
+    RUNTIME DESTINATION bin
+)
+
+# 2. Install a symlink as `fw`
+# This creates a symlink called `fw` pointing to FileWatson
+install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} 
+    -E create_symlink FileWatson \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fw\")")
+
+# 3. Install lang directory to /opt/fw/lang/
+install(DIRECTORY ${LANG_DIR}/
+    DESTINATION /opt/fw/lang
+    FILES_MATCHING PATTERN "*.lang"
+)
+elseif (WIN32)
+    # Get the Program Files path 
+    if (CMAKE_SIZEOF_VOID_P EQUAL 8)  # 64-bit system
+        set(PROGRAM_FILES_DIR $ENV{ProgramW6432})
+    else()  # 32-bit or 32-bit app on 64-bit system
+        set(PROGRAM_FILES_DIR $ENV{ProgramFiles})
+    endif()
+
+    # Set the installation directory inside Program Files
+    set(INSTALL_DIR "${PROGRAM_FILES_DIR}/FileWatson")
+
+    # Ensure the FileWatson directory exists
+    file(MAKE_DIRECTORY "${INSTALL_DIR}")
+
+    # Install binary to the correct location in Program Files
+    install(TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION "${INSTALL_DIR}"
+    )
+
+    # Copy lang directory from source to Program Files/FileWatson/lang
+    install(DIRECTORY ${LANG_DIR}/
+        DESTINATION "${INSTALL_DIR}/lang"
+        FILES_MATCHING PATTERN "*.lang"
+    )
+
+    # Create a Start Menu shortcut using CPack
+    set(CPACK_CREATE_DESKTOP_LINKS ${PROJECT_NAME})
+    set(CPACK_NSIS_MENU_LINKS
+        "FileWatson" "FileWatson"
+    )
+    set(CPACK_NSIS_EXECUTABLES_DIRECTORY ".")
+endif()

@@ -11,6 +11,16 @@ bool LangHandler::LoadLanguages(const wxString& path, wxString& out_exception) {
     wxString full_path = DirectoryUtil::AddPathSpec(res_path, path);
 
     wxDir dir(full_path);
+#elif defined(__linux__)
+    wxString full_path;
+    const char* env_path = std::getenv("FW_LANG_PATH");
+    if (env_path != nullptr) {
+        full_path = wxString::FromUTF8(env_path);
+    } else {
+        full_path = _lhcfg.def_linux_lang_path;
+    }
+    
+    wxDir dir(path);
 #else
     wxDir dir(path);
 #endif

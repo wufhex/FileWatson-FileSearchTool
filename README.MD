@@ -38,10 +38,6 @@ FileWatson allows you to perform precise searches using the search bar on the to
   To find files containing a specific keyword (e.g., "homework"), use the following:  
   `C:/path/to/folder/homework`  
 
-## **Download**
-
-You can check the releases page.
-
 ## **Features**
 
 ### 🔍 **Blazing Fast File Search**
@@ -131,6 +127,15 @@ Follow the steps below to build the FileWatson project on your platform.
    cmake .. -G "Unix Makefiles"
    make
    ```
+
+## Install Instructions
+The CMake files includes commands to install FileWatson automatically on Linux and Windows.
+
+### Linux
+1. `sudo make install` (This will also create a symlink called `fw`)
+
+### Windows
+In the Visual Studio GUI go to CMake -> Build -> Install. This will execute the `install()` command.
 
 ## Language Files
 

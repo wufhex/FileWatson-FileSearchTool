@@ -40,7 +40,8 @@ private:
     LangHandler() = default;
 
     struct LangHandlerCfg {
-        std::string lang_def_key = "lang_def";
+        std::string lang_def_key        = "lang_def";
+        std::string def_linux_lang_path = "/opt/fw/lang"; 
     };
 
     LangHandlerCfg _lhcfg;
